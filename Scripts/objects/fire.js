@@ -5,35 +5,37 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    var Bird = (function (_super) {
-        __extends(Bird, _super);
+    var Fire = (function (_super) {
+        __extends(Fire, _super);
         //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        function Bird() {
-            _super.call(this, "bird");
-            this._speed.x = 5; // Bird Speed
+        function Fire() {
+            _super.call(this, "fire");
             this._reset(this._rightBounds);
         }
-        // Check to see if the top of the bird
+        // Check to see if the top of the fire
         // has outside the viewport
-        Bird.prototype._checkBounds = function (value) {
+        Fire.prototype._checkBounds = function (value) {
             if (this.x <= value) {
                 this._reset(this._rightBounds);
             }
         };
-        //Reset the bird offscreen
-        Bird.prototype._reset = function (value) {
+        //Reset the fire offscreen
+        Fire.prototype._reset = function (value) {
+            this._speed.x = Math.floor(Math.random() * 5) + 5;
+            this._speed.y = Math.floor(Math.random() * 4) - 2;
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++
-        Bird.prototype.update = function () {
-            //Scroll the bird 5 pixels per frame
+        Fire.prototype.update = function () {
+            //Scroll the fire 5 pixels per frame
             this.x -= this._speed.x;
+            this.y -= this._speed.y;
             this._checkBounds(this._leftBounds);
         };
-        return Bird;
+        return Fire;
     })(objects.GameObject);
-    objects.Bird = Bird;
+    objects.Fire = Fire;
 })(objects || (objects = {}));
-//# sourceMappingURL=bird.js.map
+//# sourceMappingURL=fire.js.map

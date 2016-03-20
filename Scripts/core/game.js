@@ -17,6 +17,7 @@ var assetData = [
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "sky", src: "../../Assets/images/sky.png" },
     { id: "bird", src: "../../Assets/images/bird.png" },
+    { id: "fire", src: "../../Assets/images/fire.gif" },
 ];
 function preload() {
     assets = new createjs.LoadQueue();

@@ -9,7 +9,7 @@
 /// <reference path="../objects/gameobject.ts" />
 /// <reference path="../objects/sky.ts" />
 /// <reference path="../objects/bird.ts" />
-
+/// <reference path="../objects/fire.ts" />
 
 /// <reference path="../scenes/end.ts" />
 /// <reference path="../scenes/play.ts" />

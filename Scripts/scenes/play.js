@@ -21,12 +21,16 @@ var scenes;
             // added Bird to the scene
             this._bird = new objects.Bird();
             this.addChild(this._bird);
+            // added Fire to the scene
+            this._fire = new objects.Fire();
+            this.addChild(this._fire);
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
             this._sky.update();
             this._bird.update();
+            this._fire.update();
             /* this._ocean.update();
              this._island.update();
             
