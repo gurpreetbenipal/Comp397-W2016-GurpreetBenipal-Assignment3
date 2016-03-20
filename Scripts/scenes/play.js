@@ -15,14 +15,18 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
-            // added ocean to the scene
+            // added Sky to the scene
             this._sky = new objects.Sky();
             this.addChild(this._sky);
+            // added Bird to the scene
+            this._bird = new objects.Bird();
+            this.addChild(this._bird);
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
             this._sky.update();
+            this._bird.update();
             /* this._ocean.update();
              this._island.update();
             

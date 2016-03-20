@@ -3,7 +3,7 @@ module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _sky : objects.Sky;
-        
+        private _bird : objects.Bird;
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
@@ -15,9 +15,13 @@ module scenes {
         // Start Method
         public start(): void {
             
-             // added ocean to the scene
+            // added Sky to the scene
             this._sky = new objects.Sky();
             this.addChild(this._sky);
+            
+            // added Bird to the scene
+            this._bird = new objects.Bird();
+            this.addChild(this._bird);
     
             stage.addChild(this);
         }
@@ -25,6 +29,7 @@ module scenes {
         // PLAY Scene updates here
         public update(): void {
             this._sky.update();
+            this._bird.update();
            /* this._ocean.update();
             this._island.update();
            

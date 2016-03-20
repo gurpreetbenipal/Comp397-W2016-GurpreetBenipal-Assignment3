@@ -14,7 +14,7 @@ var config;
     var Screen = (function () {
         function Screen() {
         }
-        Screen.WIDTH = 640;
+        Screen.WIDTH = 700;
         Screen.HEIGHT = 480;
         Screen.CENTER_X = 320;
         Screen.CENTER_Y = 240;
