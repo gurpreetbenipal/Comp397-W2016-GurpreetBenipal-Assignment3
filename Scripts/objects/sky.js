@@ -7,31 +7,32 @@ var objects;
 (function (objects) {
     var Sky = (function (_super) {
         __extends(Sky, _super);
+        //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         function Sky() {
-            _super.call(this, assets.getResult("sky"));
-            this._speed = 5; // 5 pixels per frame
-            this._reset();
+            _super.call(this, "sky");
+            this._speed.x = 5; // 5 pixels per frame
+            this._reset(0);
         }
         // Check to see if the right of the sky
         // has met the right of the scene
-        Sky.prototype._checkBounds = function () {
-            if (this.x <= -1340) {
-                this._reset();
+        Sky.prototype._checkBounds = function (value) {
+            if (this.x <= value) {
+                this._reset(0);
             }
         };
         //Reset the sky offscreen
-        Sky.prototype._reset = function () {
-            this.x = 0;
+        Sky.prototype._reset = function (value) {
+            this.x = value;
         };
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++
         Sky.prototype.update = function () {
             //Scroll the sky 5 pixels per frame
-            this.x -= this._speed;
-            this._checkBounds();
+            this.x -= this._speed.x;
+            this._checkBounds(-1340);
         };
         return Sky;
-    })(createjs.Bitmap);
+    })(objects.GameObject);
     objects.Sky = Sky;
 })(objects || (objects = {}));
 //# sourceMappingURL=sky.js.map

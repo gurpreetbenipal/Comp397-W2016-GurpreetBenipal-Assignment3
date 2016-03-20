@@ -1,34 +1,34 @@
 module objects{
  
-    export class Sky extends createjs.Bitmap{
+    export class Sky extends objects.GameObject{
         //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
-        private _speed : number;       
+            
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         constructor(){
-            super(assets.getResult("sky"));
-            this._speed = 5;           // 5 pixels per frame
-            this._reset();
+            super("sky");
+            this._speed.x = 5;           // 5 pixels per frame
+            this._reset(0);
         }
         
         // Check to see if the right of the sky
         // has met the right of the scene
-        private _checkBounds() : void{
-            if(this.x <= -1340){
-                this._reset();
+        protected _checkBounds(value:number) : void{
+            if(this.x <= value){
+                this._reset(0);
             }
         }
         
         //Reset the sky offscreen
-        private _reset() : void{
-            this.x = 0;
+        protected _reset(value:number) : void{
+            this.x = value;
         }
         
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++
         public update() : void {
             //Scroll the sky 5 pixels per frame
-            this.x -= this._speed;
-            this._checkBounds();
+            this.x -= this._speed.x;
+            this._checkBounds(-1340);
         }
     }   
 }
