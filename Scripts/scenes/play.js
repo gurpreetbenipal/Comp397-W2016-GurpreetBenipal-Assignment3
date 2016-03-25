@@ -15,22 +15,34 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
+            //Set the Fire Count
+            this._fireCount = 3;
+            //Instantiate Fire Array
+            this._fires = new Array();
             // added Sky to the scene
             this._sky = new objects.Sky();
             this.addChild(this._sky);
             // added Bird to the scene
             this._bird = new objects.Bird();
             this.addChild(this._bird);
-            // added Fire to the scene
-            this._fire = new objects.Fire();
-            this.addChild(this._fire);
+            // added Player to the scene
+            this._player = new objects.Player();
+            this.addChild(this._player);
+            // added Fires to the scene
+            for (var fire = 0; fire < this._fireCount; fire++) {
+                this._fires[fire] = new objects.Fire();
+                this.addChild(this._fires[fire]);
+            }
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
             this._sky.update();
             this._bird.update();
-            this._fire.update();
+            this._player.update();
+            this._fires.forEach(function (fire) {
+                fire.update();
+            });
             /* this._ocean.update();
              this._island.update();
             
