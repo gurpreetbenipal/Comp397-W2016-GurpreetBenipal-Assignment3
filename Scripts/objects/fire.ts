@@ -9,6 +9,7 @@ module objects{
             super("fire");
             
             this._reset(this._rightBounds);
+            this.name="fire";
         }
         
         // Check to see if the top of the fire

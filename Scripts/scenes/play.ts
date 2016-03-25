@@ -6,6 +6,7 @@ module scenes {
         private _bird : objects.Bird;
         private _fires : objects.Fire[];
         private _player : objects.Player;
+        private _collision : managers.Collision;
         
         private _fireCount : number;
         // CONSTRUCTOR ++++++++++++++++++++++
@@ -41,6 +42,9 @@ module scenes {
                 this._fires[fire] = new objects.Fire();
                 this.addChild(this._fires[fire]);
             }
+            
+            // added Collision Manager to the scene
+            this._collision = new managers.Collision(this._player);
     
     
             stage.addChild(this);
@@ -54,7 +58,10 @@ module scenes {
             
             this._fires.forEach(fire => {
                 fire.update();
+                this._collision.check(fire);
             });
+            
+            this._collision.check(this._bird);
             
            /* this._ocean.update();
             this._island.update();

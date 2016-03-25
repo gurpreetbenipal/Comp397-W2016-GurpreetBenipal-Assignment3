@@ -12,6 +12,7 @@ var objects;
         function Fire() {
             _super.call(this, "fire");
             this._reset(this._rightBounds);
+            this.name = "fire";
         }
         // Check to see if the top of the fire
         // has outside the viewport

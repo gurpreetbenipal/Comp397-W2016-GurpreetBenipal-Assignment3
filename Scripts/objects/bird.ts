@@ -9,6 +9,7 @@ module objects{
             super("bird");
             this._speed.x = 5;           // Bird Speed
             this._reset(this._rightBounds);
+            this.name = "bird";
         }
         
         // Check to see if the top of the bird

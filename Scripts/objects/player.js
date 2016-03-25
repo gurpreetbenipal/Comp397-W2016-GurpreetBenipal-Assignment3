@@ -5,18 +5,18 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // PLAYER Class  ++++++++++++++++++++++++++++++++
+    // PLAYER Class  ++++++++++++++++++++++++++++++++++++
     var Player = (function (_super) {
         __extends(Player, _super);
-        // CONSTRUCTOR +++++++++++++++++++++++++++++++
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++
         function Player() {
             _super.call(this, assets.getResult("aladdin"));
-            this._width = this.getBounds().width;
-            this._height = this.getBounds().height;
-            this.regX = this._width * 0.5;
-            this.regY = this._height * 0.5;
-            this._topBounds = this._height * 0.5;
-            this._bottomBounds = config.Screen.HEIGHT - (this._height * 0.5);
+            this.width = this.getBounds().width;
+            this.height = this.getBounds().height;
+            this.regX = this.width * 0.5;
+            this.regY = this.height * 0.5;
+            this._topBounds = this.height * 0.5;
+            this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
             this.x = 64;
         }
         //PRIVATE METHODS

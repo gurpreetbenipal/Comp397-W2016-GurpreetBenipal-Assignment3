@@ -33,16 +33,21 @@ var scenes;
                 this._fires[fire] = new objects.Fire();
                 this.addChild(this._fires[fire]);
             }
+            // added Collision Manager to the scene
+            this._collision = new managers.Collision(this._player);
             stage.addChild(this);
         };
         // PLAY Scene updates here
         Play.prototype.update = function () {
+            var _this = this;
             this._sky.update();
             this._bird.update();
             this._player.update();
             this._fires.forEach(function (fire) {
                 fire.update();
+                _this._collision.check(fire);
             });
+            this._collision.check(this._bird);
             /* this._ocean.update();
              this._island.update();
             

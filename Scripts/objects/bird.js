@@ -13,6 +13,7 @@ var objects;
             _super.call(this, "bird");
             this._speed.x = 5; // Bird Speed
             this._reset(this._rightBounds);
+            this.name = "bird";
         }
         // Check to see if the top of the bird
         // has outside the viewport
