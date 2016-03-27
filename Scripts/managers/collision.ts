@@ -21,12 +21,22 @@ module managers{
             
             startPoint.x = this._player.x;
             startPoint.y = this._player.y;
-            endPoint.x = object.centerX;
-            endPoint.y = object.centerY;
+            endPoint.x = object.centerX + object.x;
+            endPoint.y = object.centerY + object.y;
             
             //console.log(this.distance(startPoint,endPoint));
             if(this.distance(startPoint,endPoint)< minimumDistance){
-                console.log("Collision Occur");  
+                // check if it's a Bird hit
+                if(object.name === "bird") {
+                    console.log("Bird hit!");
+                }
+                
+                // check if it's a Dragon hit
+                if(object.name === "dragon") {
+                    createjs.Sound.play("firehit");
+                    this._player.image = assets.getResult("destroy");
+                    console.log("Dragon hit!");
+                }
             }
         }
     }

@@ -15,10 +15,10 @@ var scenes;
         // PUBLIC METHODS +++++++++++++++++++++
         // Start Method
         Play.prototype.start = function () {
-            //Set the Fire Count
-            this._fireCount = 3;
-            //Instantiate Fire Array
-            this._fires = new Array();
+            //Set the Dragon Count
+            this._dragonCount = 3;
+            //Instantiate Dragon Array
+            this._dragons = new Array();
             // added Sky to the scene
             this._sky = new objects.Sky();
             this.addChild(this._sky);
@@ -28,10 +28,10 @@ var scenes;
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
-            // added Fires to the scene
-            for (var fire = 0; fire < this._fireCount; fire++) {
-                this._fires[fire] = new objects.Fire();
-                this.addChild(this._fires[fire]);
+            // added Dragons to the scene
+            for (var dragon = 0; dragon < this._dragonCount; dragon++) {
+                this._dragons[dragon] = new objects.Dragon();
+                this.addChild(this._dragons[dragon]);
             }
             // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);
@@ -43,9 +43,9 @@ var scenes;
             this._sky.update();
             this._bird.update();
             this._player.update();
-            this._fires.forEach(function (fire) {
-                fire.update();
-                _this._collision.check(fire);
+            this._dragons.forEach(function (dragon) {
+                dragon.update();
+                _this._collision.check(dragon);
             });
             this._collision.check(this._bird);
             /* this._ocean.update();

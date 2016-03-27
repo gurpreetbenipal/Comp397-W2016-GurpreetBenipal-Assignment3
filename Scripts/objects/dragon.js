@@ -5,38 +5,38 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    var Fire = (function (_super) {
-        __extends(Fire, _super);
+    var Dragon = (function (_super) {
+        __extends(Dragon, _super);
         //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
-        function Fire() {
-            _super.call(this, "fire");
+        function Dragon() {
+            _super.call(this, "dragon");
             this._reset(this._rightBounds);
-            this.name = "fire";
+            this.name = "dragon";
         }
-        // Check to see if the top of the fire
+        // Check to see if the top of the dragon
         // has outside the viewport
-        Fire.prototype._checkBounds = function (value) {
+        Dragon.prototype._checkBounds = function (value) {
             if (this.x <= value) {
                 this._reset(this._rightBounds);
             }
         };
-        //Reset the fire offscreen
-        Fire.prototype._reset = function (value) {
+        //Reset the dragon offscreen
+        Dragon.prototype._reset = function (value) {
             this._speed.x = Math.floor(Math.random() * 5) + 5;
             this._speed.y = Math.floor(Math.random() * 4) - 2;
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++
-        Fire.prototype.update = function () {
-            //Scroll the fire 5 pixels per frame
+        Dragon.prototype.update = function () {
+            //Scroll the Dragon 5 pixels per frame
             this.x -= this._speed.x;
             this.y -= this._speed.y;
             this._checkBounds(this._leftBounds);
         };
-        return Fire;
+        return Dragon;
     })(objects.GameObject);
-    objects.Fire = Fire;
+    objects.Dragon = Dragon;
 })(objects || (objects = {}));
-//# sourceMappingURL=fire.js.map
+//# sourceMappingURL=dragon.js.map

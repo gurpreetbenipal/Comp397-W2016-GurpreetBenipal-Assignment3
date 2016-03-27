@@ -4,11 +4,11 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _sky : objects.Sky;
         private _bird : objects.Bird;
-        private _fires : objects.Fire[];
+        private _dragons : objects.Dragon[];
         private _player : objects.Player;
         private _collision : managers.Collision;
         
-        private _fireCount : number;
+        private _dragonCount : number;
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
@@ -19,11 +19,11 @@ module scenes {
         
         // Start Method
         public start(): void {
-            //Set the Fire Count
-            this._fireCount = 3;
+            //Set the Dragon Count
+            this._dragonCount = 3;
             
-            //Instantiate Fire Array
-            this._fires = new Array<objects.Fire>();
+            //Instantiate Dragon Array
+            this._dragons = new Array<objects.Dragon>();
             
             // added Sky to the scene
             this._sky = new objects.Sky();
@@ -37,10 +37,10 @@ module scenes {
             this._player = new objects.Player();
             this.addChild(this._player);
             
-            // added Fires to the scene
-            for(var fire : number=0; fire < this._fireCount; fire++){
-                this._fires[fire] = new objects.Fire();
-                this.addChild(this._fires[fire]);
+            // added Dragons to the scene
+            for(var dragon : number=0; dragon < this._dragonCount; dragon++){
+                this._dragons[dragon] = new objects.Dragon();
+                this.addChild(this._dragons[dragon]);
             }
             
             // added Collision Manager to the scene
@@ -56,9 +56,9 @@ module scenes {
             this._bird.update();
             this._player.update();
             
-            this._fires.forEach(fire => {
-                fire.update();
-                this._collision.check(fire);
+            this._dragons.forEach(dragon => {
+                dragon.update();
+                this._collision.check(dragon);
             });
             
             this._collision.check(this._bird);

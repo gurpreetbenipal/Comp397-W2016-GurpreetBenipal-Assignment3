@@ -17,8 +17,11 @@ var assetData = [
     { id: "BackButton", src: "../../Assets/images/BackButton.png" },
     { id: "sky", src: "../../Assets/images/sky.png" },
     { id: "bird", src: "../../Assets/images/bird.png" },
-    { id: "fire", src: "../../Assets/images/fire.gif" },
+    { id: "dragon", src: "../../Assets/images/dragon.gif" },
+    { id: "destroy", src: "../../Assets/images/destroy.gif" },
     { id: "aladdin", src: "../../Assets/images/aladdin.png" },
+    { id: "playersound", src: "../../Assets/audio/toone.mp3" },
+    { id: "firehit", src: "../../Assets/audio/firehit.wav" },
 ];
 function preload() {
     assets = new createjs.LoadQueue();

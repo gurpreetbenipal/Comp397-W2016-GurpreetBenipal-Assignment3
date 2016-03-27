@@ -23,6 +23,8 @@ module objects {
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
 
             this.x = 64;
+            createjs.Sound.play("playersound",{"loop":-1});
+            
         }
         
         //PRIVATE METHODS
@@ -40,6 +42,8 @@ module objects {
             this.y = stage.mouseY;
 
             this._checkBounds();
+            this.image = assets.getResult("aladdin");
+            
         }
     }
 }

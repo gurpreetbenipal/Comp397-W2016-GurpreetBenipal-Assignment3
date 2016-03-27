@@ -1,18 +1,18 @@
 module objects{
  
-    export class Fire extends objects.GameObject{
+    export class Dragon extends objects.GameObject{
         //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
             
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         constructor(){
-            super("fire");
+            super("dragon");
             
             this._reset(this._rightBounds);
-            this.name="fire";
+            this.name="dragon";
         }
         
-        // Check to see if the top of the fire
+        // Check to see if the top of the dragon
         // has outside the viewport
         protected _checkBounds(value:number) : void{
             if(this.x <= value){
@@ -21,7 +21,7 @@ module objects{
             }
         }
         
-        //Reset the fire offscreen
+        //Reset the dragon offscreen
         protected _reset(value:number) : void{
             this._speed.x = Math.floor(Math.random()* 5) + 5;          
             this._speed.y = Math.floor(Math.random()* 4) - 2;         
@@ -32,7 +32,7 @@ module objects{
         
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++
         public update() : void {
-            //Scroll the fire 5 pixels per frame
+            //Scroll the Dragon 5 pixels per frame
             this.x -= this._speed.x;
             this.y -= this._speed.y;
             this._checkBounds(this._leftBounds );

@@ -18,6 +18,7 @@ var objects;
             this._topBounds = this.height * 0.5;
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
             this.x = 64;
+            createjs.Sound.play("playersound", { "loop": -1 });
         }
         //PRIVATE METHODS
         Player.prototype._checkBounds = function () {
@@ -32,6 +33,7 @@ var objects;
         Player.prototype.update = function () {
             this.y = stage.mouseY;
             this._checkBounds();
+            this.image = assets.getResult("aladdin");
         };
         return Player;
     })(createjs.Bitmap);
