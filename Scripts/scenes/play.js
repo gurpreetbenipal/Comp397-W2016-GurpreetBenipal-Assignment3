@@ -33,6 +33,9 @@ var scenes;
                 this._dragons[dragon] = new objects.Dragon();
                 this.addChild(this._dragons[dragon]);
             }
+            //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
             // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);
             stage.addChild(this);

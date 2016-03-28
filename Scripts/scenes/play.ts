@@ -7,6 +7,7 @@ module scenes {
         private _dragons : objects.Dragon[];
         private _player : objects.Player;
         private _collision : managers.Collision;
+        public scoreboard : objects.ScoreSystem;
         
         private _dragonCount : number;
         // CONSTRUCTOR ++++++++++++++++++++++
@@ -19,6 +20,7 @@ module scenes {
         
         // Start Method
         public start(): void {
+            
             //Set the Dragon Count
             this._dragonCount = 3;
             
@@ -43,10 +45,13 @@ module scenes {
                 this.addChild(this._dragons[dragon]);
             }
             
+            //added ScoreSystem to the scene
+            this.scoreboard = new objects.ScoreSystem();
+            this.addChild(this.scoreboard);
+            
             // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);
-    
-    
+            
             stage.addChild(this);
         }
 

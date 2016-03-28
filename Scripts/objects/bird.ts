@@ -23,6 +23,7 @@ module objects{
         
         //Reset the bird offscreen
         protected _reset(value:number) : void{
+            this.image = assets.getResult("bird");
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         }

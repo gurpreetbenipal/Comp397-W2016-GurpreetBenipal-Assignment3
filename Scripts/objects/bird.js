@@ -24,6 +24,7 @@ var objects;
         };
         //Reset the bird offscreen
         Bird.prototype._reset = function (value) {
+            this.image = assets.getResult("bird");
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
         };

@@ -22,6 +22,7 @@ var assetData = [
     { id: "aladdin", src: "../../Assets/images/aladdin.png" },
     { id: "playersound", src: "../../Assets/audio/toone.mp3" },
     { id: "firehit", src: "../../Assets/audio/firehit.wav" },
+    { id: "pickupitem", src: "../../Assets/audio/pickupitem.wav" },
 ];
 function preload() {
     assets = new createjs.LoadQueue();
