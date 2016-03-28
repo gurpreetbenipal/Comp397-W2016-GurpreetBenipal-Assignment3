@@ -10,6 +10,7 @@ var managers;
             return Math.sqrt(Math.pow(endPoint.x - startPoint.x, 2) + Math.pow(endPoint.y - startPoint.y, 2));
         };
         Collision.prototype.check = function (object) {
+            var _this = this;
             var startPoint = new createjs.Point();
             var endPoint = new createjs.Point();
             var playerHalfHeight = this._player.height * 0.5;
@@ -30,8 +31,14 @@ var managers;
                 }
                 // check if it's a Dragon hit
                 if (object.name === "dragon" && object.isHit === false) {
+                    //this._player.image = assets.getResult("destroy");   // Display the player destroy image instead of Player
                     createjs.Sound.play("firehit");
-                    this._player.image = assets.getResult("destroy"); // Display the player destroy image instead of Player
+                    play.explosion.update(this._player.y - playerHalfHeight);
+                    this._player.image = assets.getResult("");
+                    setTimeout(function () {
+                        play.explosion.reset(_this._player.y - playerHalfHeight);
+                        _this._player.image = assets.getResult("aladdin");
+                    }, 500);
                     console.log("Dragon hit!");
                     object.isHit = true;
                     play.scoreboard.lives--; //Decrease the Player Lives by 1

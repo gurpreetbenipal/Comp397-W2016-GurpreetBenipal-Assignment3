@@ -18,15 +18,14 @@ var assetData:objects.Asset[] = [
     // Add your Assets here
     {id: "PlayButton", src:"../../Assets/images/PlayButton.png"},
     {id: "PlayAgainButton", src:"../../Assets/images/PlayAgainButton.png"},
-    {id: "BackButton", src:"../../Assets/images/BackButton.png"},
     {id: "sky", src:"../../Assets/images/sky.png"},
     {id: "bird", src:"../../Assets/images/bird.png"},
     {id: "dragon", src:"../../Assets/images/dragon.gif"},
-    {id: "destroy", src:"../../Assets/images/destroy.gif"},
+    {id: "destroy", src:"../../Assets/images/fire.gif"},
     {id: "aladdin", src:"../../Assets/images/aladdin.png"},
     
     {id: "gamestartsound", src:"../../Assets/audio/gamestart.wav"},
-    {id: "playsound", src:"../../Assets/audio/playsound.mp3"},
+    {id: "playsound", src:"../../Assets/audio/gamesound.wav"},
     {id: "firehit", src:"../../Assets/audio/firehit.wav"},
     {id: "pickupitem", src:"../../Assets/audio/pickupitem.wav"},
     

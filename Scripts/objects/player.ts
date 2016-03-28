@@ -42,8 +42,7 @@ module objects {
             this.y = stage.mouseY;
 
             this._checkBounds();
-            this.image = assets.getResult("aladdin");
-            
+            //this.image = assets.getResult("aladdin");
         }
     }
 }

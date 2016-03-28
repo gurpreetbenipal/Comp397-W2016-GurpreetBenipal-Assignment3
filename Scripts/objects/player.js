@@ -32,7 +32,7 @@ var objects;
         Player.prototype.update = function () {
             this.y = stage.mouseY;
             this._checkBounds();
-            this.image = assets.getResult("aladdin");
+            //this.image = assets.getResult("aladdin");
         };
         return Player;
     })(createjs.Bitmap);

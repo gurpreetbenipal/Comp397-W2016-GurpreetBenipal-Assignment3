@@ -7,9 +7,13 @@ module scenes {
         private _dragons : objects.Dragon[];
         private _player : objects.Player;
         private _collision : managers.Collision;
-        public scoreboard : objects.ScoreSystem;
-        
         private _dragonCount : number;
+        
+        //PUBLIC INSTANCE VARIABLES ++++++++++++
+        public scoreboard : objects.ScoreSystem;
+        public explosion : objects.Explosion;
+        
+        
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
@@ -39,11 +43,17 @@ module scenes {
             this._player = new objects.Player();
             this.addChild(this._player);
             
+             //added Explosion to the scene
+            this.explosion = new objects.Explosion();
+            this.addChild(this.explosion);
+            
             // added Dragons to the scene
             for(var dragon : number=0; dragon < this._dragonCount; dragon++){
                 this._dragons[dragon] = new objects.Dragon();
                 this.addChild(this._dragons[dragon]);
             }
+            
+           
             
             //added ScoreSystem to the scene
             this.scoreboard = new objects.ScoreSystem();
@@ -60,30 +70,17 @@ module scenes {
             this._sky.update();
             this._bird.update();
             this._player.update();
-            
             this._dragons.forEach(dragon => {
+                
                 dragon.update();
                 this._collision.check(dragon);
+                
             });
             
             this._collision.check(this._bird);
             
-           /* this._ocean.update();
-            this._island.update();
-           
-            this._player.update();
-           
-            this._clouds.forEach(cloud => {
-                cloud.update();
-                this._collision.check(cloud);
-            });
-            
-            this._collision.check(this._island);
-            */
-        }
-        
-        
-        //EVENT HANDLERS ++++++++++++++++++++
+         
+        } 
         
     }
 }

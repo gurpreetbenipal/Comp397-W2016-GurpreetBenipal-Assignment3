@@ -28,6 +28,9 @@ var scenes;
             // added Player to the scene
             this._player = new objects.Player();
             this.addChild(this._player);
+            //added Explosion to the scene
+            this.explosion = new objects.Explosion();
+            this.addChild(this.explosion);
             // added Dragons to the scene
             for (var dragon = 0; dragon < this._dragonCount; dragon++) {
                 this._dragons[dragon] = new objects.Dragon();
@@ -51,18 +54,6 @@ var scenes;
                 _this._collision.check(dragon);
             });
             this._collision.check(this._bird);
-            /* this._ocean.update();
-             this._island.update();
-            
-             this._player.update();
-            
-             this._clouds.forEach(cloud => {
-                 cloud.update();
-                 this._collision.check(cloud);
-             });
-             
-             this._collision.check(this._island);
-             */
         };
         return Play;
     })(objects.Scene);
