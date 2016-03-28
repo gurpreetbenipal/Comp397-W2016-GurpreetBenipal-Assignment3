@@ -1,8 +1,6 @@
 module objects{
  
     export class Dragon extends objects.GameObject{
-        //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
-            
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         constructor(){
@@ -10,6 +8,8 @@ module objects{
             
             this._reset(this._rightBounds);
             this.name="dragon";
+            this.isHit = false;
+         
         }
         
         // Check to see if the top of the dragon
@@ -28,6 +28,8 @@ module objects{
             
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
+            this.isHit = false;
+        
         }
         
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++

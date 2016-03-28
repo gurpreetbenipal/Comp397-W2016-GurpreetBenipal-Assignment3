@@ -7,12 +7,12 @@ var objects;
 (function (objects) {
     var Dragon = (function (_super) {
         __extends(Dragon, _super);
-        //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         function Dragon() {
             _super.call(this, "dragon");
             this._reset(this._rightBounds);
             this.name = "dragon";
+            this.isHit = false;
         }
         // Check to see if the top of the dragon
         // has outside the viewport
@@ -27,6 +27,7 @@ var objects;
             this._speed.y = Math.floor(Math.random() * 4) - 2;
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
+            this.isHit = false;
         };
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++
         Dragon.prototype.update = function () {

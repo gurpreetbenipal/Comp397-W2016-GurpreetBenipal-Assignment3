@@ -15,10 +15,12 @@ module objects {
         public height: number;
         public centerX: number;
         public centerY: number; 
+        public isHit: boolean;
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         constructor(bitmapString: string) {
             super(assets.getResult(bitmapString));
+            this.isHit = false;
             this._speed = new createjs.Point(0, 0);
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
@@ -28,6 +30,7 @@ module objects {
             this._bottomBounds = config.Screen.HEIGHT - this.height;
             this._leftBounds = -this.width;
             this._rightBounds = config.Screen.WIDTH + this.width;
+            
         }
 
 
@@ -42,6 +45,7 @@ module objects {
         //Reset the Object offscreen
         protected _reset(value: number): void {
             this.x = value;
+            this.isHit = false;
         }
         
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++

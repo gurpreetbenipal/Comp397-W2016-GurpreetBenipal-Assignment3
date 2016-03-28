@@ -2,8 +2,9 @@
 module scenes {
     export class End extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _endLabel: objects.Label;
+        private _gameoverLabel: objects.Label;
         private _restartButton: objects.Button;
+        private _sky : objects.Sky;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -15,18 +16,23 @@ module scenes {
         
         // Start Method
         public start(): void {
-            //Add Menu Label
-            this._endLabel = new objects.Label(
-                "END SCENE", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._endLabel);
+            // added Sky to the scene
+            this._sky = new objects.Sky();
+            this.addChild(this._sky);
+            
+            //Add GAME OVER Label
+            this._gameoverLabel = new objects.Label(
+                "GAME OVER !", 
+                "bold 60px Cambiria", 
+                "#990000",
+                config.Screen.CENTER_X + 50, config.Screen.CENTER_Y-40, true);
+            this.addChild(this._gameoverLabel);
             
             // add the BACK button to the OVER scene
             this._restartButton = new objects.Button(
-                "RestartButton",
-                config.Screen.CENTER_X,
-                config.Screen.CENTER_Y + 180, true);
+                "PlayAgainButton",
+                config.Screen.CENTER_X + 50,
+                config.Screen.CENTER_Y + 100, true);
             this.addChild(this._restartButton);
            
             // START_OVER Button event listener

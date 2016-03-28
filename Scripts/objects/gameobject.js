@@ -11,6 +11,7 @@ var objects;
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         function GameObject(bitmapString) {
             _super.call(this, assets.getResult(bitmapString));
+            this.isHit = false;
             this._speed = new createjs.Point(0, 0);
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
@@ -31,6 +32,7 @@ var objects;
         //Reset the Object offscreen
         GameObject.prototype._reset = function (value) {
             this.x = value;
+            this.isHit = false;
         };
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++
         GameObject.prototype.update = function () {

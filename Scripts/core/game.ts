@@ -16,8 +16,8 @@ var end: scenes.End;
 
 var assetData:objects.Asset[] = [
     // Add your Assets here
-    {id: "StartButton", src:"../../Assets/images/StartButton.png"},
-    {id: "RestartButton", src:"../../Assets/images/RestartButton.png"},
+    {id: "PlayButton", src:"../../Assets/images/PlayButton.png"},
+    {id: "PlayAgainButton", src:"../../Assets/images/PlayAgainButton.png"},
     {id: "BackButton", src:"../../Assets/images/BackButton.png"},
     {id: "sky", src:"../../Assets/images/sky.png"},
     {id: "bird", src:"../../Assets/images/bird.png"},
@@ -25,7 +25,8 @@ var assetData:objects.Asset[] = [
     {id: "destroy", src:"../../Assets/images/destroy.gif"},
     {id: "aladdin", src:"../../Assets/images/aladdin.png"},
     
-    {id: "playersound", src:"../../Assets/audio/toone.mp3"},
+    {id: "gamestartsound", src:"../../Assets/audio/gamestart.wav"},
+    {id: "playsound", src:"../../Assets/audio/playsound.mp3"},
     {id: "firehit", src:"../../Assets/audio/firehit.wav"},
     {id: "pickupitem", src:"../../Assets/audio/pickupitem.wav"},
     

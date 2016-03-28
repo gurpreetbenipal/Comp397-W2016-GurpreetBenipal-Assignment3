@@ -10,6 +10,7 @@ module objects{
             this._speed.x = 5;           // Bird Speed
             this._reset(this._rightBounds);
             this.name = "bird";
+            
         }
         
         // Check to see if the top of the bird
@@ -17,7 +18,6 @@ module objects{
         protected _checkBounds(value:number) : void{
             if(this.x <= value){
                  this._reset(this._rightBounds);
-                //this._reset(this._width + config.Screen.WIDTH);
             }
         }
         
@@ -26,6 +26,7 @@ module objects{
             this.image = assets.getResult("bird");
             this.x = value;
             this.y = Math.floor(Math.random() * this._bottomBounds) + this._topBounds;
+          
         }
         
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++

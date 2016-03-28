@@ -2,8 +2,10 @@
 module scenes {
     export class Menu extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _menuLabel: objects.Label;
-        private _startButton: objects.Button;
+        private _welcomeLabel: objects.Label;
+        private _instructionLabel : objects.Label;
+        private _playButton: objects.Button;
+        private _sky : objects.Sky;
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
@@ -14,23 +16,38 @@ module scenes {
         
         // Start Method
         public start(): void {
-            //Add Menu Label
-            this._menuLabel = new objects.Label(
-                "MENU SCENE", "60px Consolas",
-                "#000000",
-                config.Screen.CENTER_X, config.Screen.CENTER_Y, true);
-            this.addChild(this._menuLabel);
+             // added Sky to the scene
+            this._sky = new objects.Sky();
+            this.addChild(this._sky);
             
+            //Add WELCOME Label
+            this._welcomeLabel = new objects.Label(
+                "WELCOME to the ALADDIN's World", 
+                "bold 24px Cambiria", 
+                "#00ff00", 
+                config.Screen.CENTER_X + 30, 
+                30,true);
+            this.addChild(this._welcomeLabel);
             
-            // add the Start button to the MENU scene
-            this._startButton = new objects.Button(
-                "StartButton",
-                config.Screen.CENTER_X,
-                config.Screen.CENTER_Y + 180, true);
-            this.addChild(this._startButton);
+            //Add INSTRUCTION Label
             
-            // Start Button event listener
-            this._startButton.on("click", this._startButtonClick, this);
+            this._instructionLabel = new objects.Label(
+                "INSTRUCTIONS:- This game is very simple to play. The character\nof the game named as ALADDIN can move up and down on the \nscreen based on the location of mouse pointer.In order to score, you \nneed to touch the bird. You will have to save your life from the \ndragons that are emmitting fires through their mouth. If Aladdin \ncollides with the dragon, then he losses his life. Only five lives \nwill be given to you at the beginning of the game. If you consumed \nall the lives, then the Game will be over. After the game is over, \nyou can play again by clicking on the Play Again Button. Now you \ncan Start the game by clicking the Play Button. All the Best !", 
+                "bold 22px Cambiria", 
+                "#ffffb3", 
+                config.Screen.CENTER_X + 40, 
+                config.Screen.CENTER_Y-40,true);
+            this.addChild(this._instructionLabel);
+
+            // add the PLAY button to the MENU scene
+            this._playButton = new objects.Button(
+                "PlayButton",
+                config.Screen.CENTER_X + 40,
+                config.Screen.CENTER_Y + 170, true);
+            this.addChild(this._playButton);
+            
+            // Play Button event listener
+            this._playButton.on("click", this._startButtonClick, this);
             
             
             // add this scene to the global stage container
@@ -45,10 +62,11 @@ module scenes {
         
         //EVENT HANDLERS ++++++++++++++++++++
         
-        // LEFT_CAVE Button click event handler
+        // PLAY Button click event handler
         private _startButtonClick(event: createjs.MouseEvent) {
-            // Switch to the LEFT_CAVE Scene
+            // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
+            createjs.Sound.play("playsound",{"loop":-1});
             changeScene();
         }
 
