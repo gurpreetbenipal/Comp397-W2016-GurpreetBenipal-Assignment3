@@ -7,7 +7,6 @@ var objects;
 (function (objects) {
     var Bird = (function (_super) {
         __extends(Bird, _super);
-        //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         function Bird() {
             _super.call(this, "bird");

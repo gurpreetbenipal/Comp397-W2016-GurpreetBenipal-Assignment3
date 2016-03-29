@@ -1,13 +1,23 @@
 <!DOCTYPE html>
+<!--Source file name:index.html-->
+<!--Author's Name:Gurpreet Benipal-->
+<!--Last Modified By Gurpreet Benipal-->
+<!--Last Modified On: March 29,2016-->
+<!--Description: In this game, the player named as Aladdin can move up and down on the screen with the help of mouse pointer. The player has to collect all the birds that are carrying magical lamps along with them. Whenever, the player collects any bird, his score will increase by 100. On the other                  side, the player has also encountered dragons in this game. If the player touches any dragon, then his life will be deducted by 1. The player can get only 5 lives in this game. When the lives count reaches to 0, the game will be over. After that the player can restart the game by                    clicking on the Play Again button.Moreover, this is a theme based game, where the player can select whether he wants the Day background or Night background.-->
+
+<!-- This game is tested on Mozilla Firefox and Google Chrome-->
+
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>MailPilot Game-Gurpreet Benipal</title>
+    <title>Side Scroller Game-Gurpreet Benipal</title>
     <!-- CSS Section -->
     <link href="Content/reset.css" rel="stylesheet" />
     <link href="Content/game.css" rel="stylesheet" />
 </head>
+
 <body>
     <div class="game">
         <canvas id="canvas" width="700" height="480"></canvas>
@@ -24,11 +34,11 @@
     <script src="Scripts/lib/preloadjs-0.6.1.min.js"></script>
 
     <!-- Game Scripts -->
-     <script src="Scripts/objects/asset.js"></script>
+    <script src="Scripts/objects/asset.js"></script>
     <script src="Scripts/objects/label.js"></script>
     <script src="Scripts/objects/button.js"></script>
     <script src="Scripts/objects/scene.js"></script>
-    <script src="Scripts/objects/gameobject.js"></script> 
+    <script src="Scripts/objects/gameobject.js"></script>
     <script src="Scripts/objects/sky.js"></script>
     <script src="Scripts/objects/bird.js"></script>
     <script src="Scripts/objects/dragon.js"></script>
@@ -36,7 +46,7 @@
     <script src="Scripts/objects/explosion.js"></script>
     <script src="Scripts/objects/scoresystem.js"></script>
     <script src="Scripts/managers/collision.js"></script>
-    
+
     <!-- Scene Scripts -->
     <script src="Scripts/scenes/end.js"></script>
     <script src="Scripts/scenes/play.js"></script>
@@ -45,4 +55,5 @@
     <!-- Main Game Scripts -->
     <script src="Scripts/core/game.js"></script>
 </body>
+
 </html>

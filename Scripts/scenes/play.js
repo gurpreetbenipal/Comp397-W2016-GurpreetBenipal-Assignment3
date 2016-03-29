@@ -51,8 +51,10 @@ var scenes;
             this._player.update();
             this._dragons.forEach(function (dragon) {
                 dragon.update();
+                // Check the Collision with Dragon
                 _this._collision.check(dragon);
             });
+            // Check the Collision with Bird
             this._collision.check(this._bird);
         };
         return Play;

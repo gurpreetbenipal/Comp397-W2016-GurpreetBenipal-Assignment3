@@ -1,18 +1,18 @@
-// LEFT_CAVE SCENE
+// END SCENE
 module scenes {
+    // END CLASS ++++++++++++++++++++++++++++++++++++++++++
     export class End extends objects.Scene {
-        //PRIVATE INSTANCE VARIABLES ++++++++++++
+        //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++++
         private _gameoverLabel: objects.Label;
-        private _restartButton: objects.Button;
-        private _sky : objects.Sky;
+        private _playAgainButton: objects.Button;
+        private _sky: objects.Sky;
         
-        // CONSTRUCTOR ++++++++++++++++++++++
+        // CONSTRUCTOR ++++++++++++++++++++++++++++++++++++
         constructor() {
             super();
         }
         
-        // PUBLIC METHODS ++++++++++++++++++++
-        
+        // PUBLIC METHODS +++++++++++++++++++++++++++++++++
         
         // Start Method
         public start(): void {
@@ -22,25 +22,25 @@ module scenes {
             
             //Add GAME OVER Label
             this._gameoverLabel = new objects.Label(
-                "GAME OVER !", 
-                "bold 60px Cambiria", 
+                "GAME OVER !",
+                "bold 60px Cambiria",
                 "#990000",
-                config.Screen.CENTER_X + 50, config.Screen.CENTER_Y-40, true);
+                config.Screen.CENTER_X + 50, config.Screen.CENTER_Y - 40, true);
             this.addChild(this._gameoverLabel);
             
+            // add the Score Board to the Game Over Scene
             this.addChild(play.scoreboard);
             
-            // add the BACK button to the OVER scene
-            this._restartButton = new objects.Button(
+            // add the PLAY AGAIN button to the OVER scene
+            this._playAgainButton = new objects.Button(
                 "PlayAgainButton",
                 config.Screen.CENTER_X + 50,
                 config.Screen.CENTER_Y + 100, true);
-            this.addChild(this._restartButton);
+            this.addChild(this._playAgainButton);
            
-            // START_OVER Button event listener
-            this._restartButton.on("click", this._restartButtonClick, this);
+            // PLAY AGAIN Button event listener
+            this._playAgainButton.on("click", this._restartButtonClick, this);
 
-           
             // add this scene to the global stage container
             stage.addChild(this);
         }
@@ -55,6 +55,7 @@ module scenes {
         
         // START_OVER Button click event handler
         private _restartButtonClick(event: createjs.MouseEvent) {
+            //Generate Button Press Sound
             createjs.Sound.play("buttonpress");
             // Switch to the INTRO Scene
             scene = config.Scene.MENU;

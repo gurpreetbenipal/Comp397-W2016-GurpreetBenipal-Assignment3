@@ -2,6 +2,7 @@ module objects {
     
     // PLAYER Class  ++++++++++++++++++++++++++++++++++++
     export class Player extends createjs.Bitmap {
+        
         //PRIVATE INSTANCE VARIABLES ++++++++++++++++++++
         private _topBounds: number;
         private _bottomBounds: number;
@@ -23,8 +24,6 @@ module objects {
             this._bottomBounds = config.Screen.HEIGHT - (this.height * 0.5);
 
             this.x = 64;
-            
-            
         }
         
         //PRIVATE METHODS
@@ -40,9 +39,7 @@ module objects {
         //PUBLIC METHODS
         public update(): void {
             this.y = stage.mouseY;
-
             this._checkBounds();
-            //this.image = assets.getResult("aladdin");
         }
     }
 }

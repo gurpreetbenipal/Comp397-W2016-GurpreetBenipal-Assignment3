@@ -12,7 +12,7 @@ var objects;
             _super.call(this, "dragon");
             this._reset(this._rightBounds);
             this.name = "dragon";
-            this.isHit = false;
+            this.isHit = false; // If bird or dragon collides with the player, then isHit = true
         }
         // Check to see if the top of the dragon
         // has outside the viewport
@@ -40,4 +40,5 @@ var objects;
     })(objects.GameObject);
     objects.Dragon = Dragon;
 })(objects || (objects = {}));
+kBounds(this._leftBounds);
 //# sourceMappingURL=dragon.js.map

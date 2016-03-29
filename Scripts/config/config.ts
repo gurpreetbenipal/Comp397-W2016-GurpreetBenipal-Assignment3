@@ -21,8 +21,8 @@
     }
     
     //Sky Constants
-    export class Sky{
-        public static DAYTHEME: string = "daytheme" 
-        public static NIGHTTHEME: string = "nighttheme" 
+    export class Sky {
+        public static DAYTHEME: string = "daytheme"
+        public static NIGHTTHEME: string = "nighttheme"
     }
 }

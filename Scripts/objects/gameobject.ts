@@ -8,13 +8,12 @@ module objects {
         protected _topBounds: number;
         protected _bottomBounds: number;
        
-        
         //PUBLIC INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
         public name: string;
         public width: number;
         public height: number;
         public centerX: number;
-        public centerY: number; 
+        public centerY: number;
         public isHit: boolean;
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
@@ -30,9 +29,8 @@ module objects {
             this._bottomBounds = config.Screen.HEIGHT - this.height;
             this._leftBounds = -this.width;
             this._rightBounds = config.Screen.WIDTH + this.width;
-            
-        }
 
+        }
 
         protected _checkBounds(value: number): void {
             var resetValue: number = 0;

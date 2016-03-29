@@ -5,9 +5,9 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
+    //SKY CLASS ++++++++++++++++++++++++++++++++++++++++++++++
     var Sky = (function (_super) {
         __extends(Sky, _super);
-        //PRIVATE INSTANCE VARIABLES +++++++++++++++++++++++++++++++++++++
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         function Sky() {
             _super.call(this, theme);
@@ -25,7 +25,7 @@ var objects;
         Sky.prototype._reset = function (value) {
             this.x = value;
         };
-        //PUBLIC METHODS ++++++++++++++++++++++++++++++++
+        //PUBLIC METHODS +++++++++++++++++++++++++++++++++++++++
         Sky.prototype.update = function () {
             //Scroll the sky 5 pixels per frame
             this.x -= this._speed.x;

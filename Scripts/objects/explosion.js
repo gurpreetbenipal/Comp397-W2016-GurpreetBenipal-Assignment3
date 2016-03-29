@@ -5,7 +5,7 @@ var __extends = (this && this.__extends) || function (d, b) {
 };
 var objects;
 (function (objects) {
-    // PLAYER Class  ++++++++++++++++++++++++++++++++++++
+    // EXPLOSION Class  ++++++++++++++++++++++++++++++++++++
     var Explosion = (function (_super) {
         __extends(Explosion, _super);
         function Explosion() {
@@ -13,15 +13,16 @@ var objects;
             this.reset(0);
         }
         //PUBLIC METHODS ++++++++++++++++++++++++++++++++++
+        // Update the Explosion image
         Explosion.prototype.update = function (player_Y) {
             this.x = 10;
-            this.y = player_Y;
-            this.image = assets.getResult("destroy");
+            this.y = player_Y; // Y coordinate of the explosion will be same as the Player's Y coordinate
+            this.image = assets.getResult("destroy"); // Display the explosion image
         };
         Explosion.prototype.reset = function (player_Y) {
             this.x = 10;
             this.y = player_Y;
-            this.image = assets.getResult("");
+            this.image = assets.getResult(""); // Hides the explosion image or Set it to null
         };
         return Explosion;
     })(createjs.Bitmap);

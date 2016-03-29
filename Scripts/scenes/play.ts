@@ -2,22 +2,21 @@
 module scenes {
     export class Play extends objects.Scene {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
-        private _sky : objects.Sky;
-        private _bird : objects.Bird;
-        private _dragons : objects.Dragon[];
-        private _player : objects.Player;
-        private _collision : managers.Collision;
-        private _dragonCount : number;
+        private _sky: objects.Sky;
+        private _bird: objects.Bird;
+        private _dragons: objects.Dragon[];
+        private _player: objects.Player;
+        private _collision: managers.Collision;
+        private _dragonCount: number;
         
         //PUBLIC INSTANCE VARIABLES ++++++++++++
-        public scoreboard : objects.ScoreSystem;
-        public explosion : objects.Explosion;
+        public scoreboard: objects.ScoreSystem;
+        public explosion: objects.Explosion;
         
         
         // CONSTRUCTOR ++++++++++++++++++++++
         constructor() {
             super();
-            
         }
         
         // PUBLIC METHODS +++++++++++++++++++++
@@ -43,17 +42,15 @@ module scenes {
             this._player = new objects.Player();
             this.addChild(this._player);
             
-             //added Explosion to the scene
+            //added Explosion to the scene
             this.explosion = new objects.Explosion();
             this.addChild(this.explosion);
             
             // added Dragons to the scene
-            for(var dragon : number=0; dragon < this._dragonCount; dragon++){
+            for (var dragon: number = 0; dragon < this._dragonCount; dragon++) {
                 this._dragons[dragon] = new objects.Dragon();
                 this.addChild(this._dragons[dragon]);
             }
-            
-           
             
             //added ScoreSystem to the scene
             this.scoreboard = new objects.ScoreSystem();
@@ -61,9 +58,9 @@ module scenes {
             
             // added Collision Manager to the scene
             this._collision = new managers.Collision(this._player);
-            
+
             stage.addChild(this);
-            
+
         }
 
         // PLAY Scene updates here
@@ -72,16 +69,13 @@ module scenes {
             this._bird.update();
             this._player.update();
             this._dragons.forEach(dragon => {
-                
                 dragon.update();
+                // Check the Collision with Dragon
                 this._collision.check(dragon);
-                
             });
             
+            // Check the Collision with Bird
             this._collision.check(this._bird);
-            
-         
-        } 
-        
+        }
     }
 }

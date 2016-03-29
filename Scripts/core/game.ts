@@ -15,24 +15,25 @@ var menu: scenes.Menu;
 var play: scenes.Play;
 var end: scenes.End;
 
-var assetData:objects.Asset[] = [
+var assetData: objects.Asset[] = [
     // Add your Assets here
-    {id: "PlayDayButton", src:"../../Assets/images/playdaybutton.png"},
-    {id: "PlayNightButton", src:"../../Assets/images/playnightbutton.png"},
-    {id: "PlayAgainButton", src:"../../Assets/images/PlayAgainButton.png"},
-    {id: "daytheme", src:"../../Assets/images/daytheme.png"},
-    {id: "nighttheme", src:"../../Assets/images/nighttheme.png"},
-    {id: "bird", src:"../../Assets/images/bird.png"},
-    {id: "dragon", src:"../../Assets/images/dragon.gif"},
-    {id: "destroy", src:"../../Assets/images/fire.gif"},
-    {id: "aladdin", src:"../../Assets/images/aladdin.png"},
-    
-    {id: "gamestartsound", src:"../../Assets/audio/gamestart.wav"},
-    {id: "playsound", src:"../../Assets/audio/gamesound.wav"},
-    {id: "firehit", src:"../../Assets/audio/firehit.wav"},
-    {id: "pickupitem", src:"../../Assets/audio/pickupitem.wav"},
-    {id: "buttonpress", src:"../../Assets/audio/buttonpress.wav"},
-    
+    { id: "PlayDayButton", src: "../../Assets/images/playdaybutton.png" },
+    { id: "PlayNightButton", src: "../../Assets/images/playnightbutton.png" },
+    { id: "PlayAgainButton", src: "../../Assets/images/PlayAgainButton.png" },
+    { id: "daytheme", src: "../../Assets/images/daytheme.png" },
+    { id: "nighttheme", src: "../../Assets/images/nighttheme.png" },
+    { id: "bird", src: "../../Assets/images/bird.png" },
+    { id: "dragon", src: "../../Assets/images/dragon.gif" },
+    { id: "destroy", src: "../../Assets/images/fire.gif" },
+    { id: "aladdin", src: "../../Assets/images/aladdin.png" },
+
+    { id: "gamestartsound", src: "../../Assets/audio/gamestart.wav" },
+    { id: "nightplaysound", src: "../../Assets/audio/gamesound.wav" },
+    { id: "dayplaysound", src: "../../Assets/audio/playsound.mp3" },
+    { id: "firehit", src: "../../Assets/audio/firehit.wav" },
+    { id: "pickupitem", src: "../../Assets/audio/pickupitem.wav" },
+    { id: "buttonpress", src: "../../Assets/audio/buttonpress.wav" },
+
 ];
 
 function preload() {
