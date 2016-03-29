@@ -44,6 +44,7 @@ var scenes;
         //EVENT HANDLERS ++++++++++++++++++++
         // PLAY Button click event handler
         Menu.prototype._playDayButtonClick = function (event) {
+            createjs.Sound.play("buttonpress");
             // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
             theme = config.Sky.DAYTHEME;
@@ -52,6 +53,7 @@ var scenes;
         };
         // PLAY Button click event handler
         Menu.prototype._playNightButtonClick = function (event) {
+            createjs.Sound.play("buttonpress");
             // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
             theme = config.Sky.NIGHTTHEME;

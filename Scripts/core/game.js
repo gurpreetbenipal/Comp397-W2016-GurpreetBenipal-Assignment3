@@ -26,6 +26,7 @@ var assetData = [
     { id: "playsound", src: "../../Assets/audio/gamesound.wav" },
     { id: "firehit", src: "../../Assets/audio/firehit.wav" },
     { id: "pickupitem", src: "../../Assets/audio/pickupitem.wav" },
+    { id: "buttonpress", src: "../../Assets/audio/buttonpress.wav" },
 ];
 function preload() {
     assets = new createjs.LoadQueue();

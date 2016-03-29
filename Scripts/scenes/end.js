@@ -37,6 +37,7 @@ var scenes;
         //EVENT HANDLERS ++++++++++++++++++++
         // START_OVER Button click event handler
         End.prototype._restartButtonClick = function (event) {
+            createjs.Sound.play("buttonpress");
             // Switch to the INTRO Scene
             scene = config.Scene.MENU;
             changeScene();

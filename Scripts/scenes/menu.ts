@@ -76,6 +76,7 @@ module scenes {
         
         // PLAY Button click event handler
         private _playDayButtonClick(event: createjs.MouseEvent) {
+            createjs.Sound.play("buttonpress");
             // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
             theme = config.Sky.DAYTHEME;
@@ -85,6 +86,7 @@ module scenes {
         
         // PLAY Button click event handler
         private _playNightButtonClick(event: createjs.MouseEvent) {
+            createjs.Sound.play("buttonpress");
             // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
             theme = config.Sky.NIGHTTHEME;

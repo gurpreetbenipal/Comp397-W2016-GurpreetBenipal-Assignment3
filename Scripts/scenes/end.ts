@@ -55,6 +55,7 @@ module scenes {
         
         // START_OVER Button click event handler
         private _restartButtonClick(event: createjs.MouseEvent) {
+            createjs.Sound.play("buttonpress");
             // Switch to the INTRO Scene
             scene = config.Scene.MENU;
             changeScene();
