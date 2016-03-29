@@ -30,7 +30,7 @@ var scenes;
             // Play Button event listener
             this._playdayButton.on("click", this._playDayButtonClick, this);
             // add the PLAY button to the MENU scene
-            this._playnightButton = new objects.Button("PlayNightButton", config.Screen.CENTER_X + 100, config.Screen.CENTER_Y + 170, true);
+            this._playnightButton = new objects.Button("PlayNightButton", config.Screen.CENTER_X + 160, config.Screen.CENTER_Y + 170, true);
             this.addChild(this._playnightButton);
             // Play Button event listener
             this._playnightButton.on("click", this._playNightButtonClick, this);

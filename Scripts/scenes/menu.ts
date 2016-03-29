@@ -53,7 +53,7 @@ module scenes {
             // add the PLAY button to the MENU scene
             this._playnightButton = new objects.Button(
                 "PlayNightButton",
-                config.Screen.CENTER_X + 100,
+                config.Screen.CENTER_X + 160,
                 config.Screen.CENTER_Y + 170, true);
             this.addChild(this._playnightButton);
             
