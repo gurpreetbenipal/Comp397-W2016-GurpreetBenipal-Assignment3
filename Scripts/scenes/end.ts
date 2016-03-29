@@ -28,6 +28,8 @@ module scenes {
                 config.Screen.CENTER_X + 50, config.Screen.CENTER_Y-40, true);
             this.addChild(this._gameoverLabel);
             
+            this.addChild(play.scoreboard);
+            
             // add the BACK button to the OVER scene
             this._restartButton = new objects.Button(
                 "PlayAgainButton",
@@ -38,14 +40,14 @@ module scenes {
             // START_OVER Button event listener
             this._restartButton.on("click", this._restartButtonClick, this);
 
-
+           
             // add this scene to the global stage container
             stage.addChild(this);
         }
 
         // PLAY Scene updates here
         public update(): void {
-
+            this._sky.update();
         }
         
         

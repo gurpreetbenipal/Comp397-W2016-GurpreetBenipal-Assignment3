@@ -53,6 +53,7 @@ module managers {
                         play.scoreboard.lives--;                        //Decrease the Player Lives by 1
                    
                         if (play.scoreboard.lives < 0) {
+                            play.scoreboard.lives=0;
                             createjs.Sound.stop();
                             // Switch to the END Scene
                             scene = config.Scene.END;

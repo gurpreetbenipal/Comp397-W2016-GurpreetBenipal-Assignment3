@@ -7,7 +7,6 @@
         public static END: number = 2;
     }
     
-    
     // Screen Constants
     export class Screen {
         public static WIDTH: number = 700;
@@ -19,5 +18,11 @@
     // Game Constants
     export class Game {
         public static FPS: number = 60;
+    }
+    
+    //Sky Constants
+    export class Sky{
+        public static DAYTHEME: string = "daytheme" 
+        public static NIGHTTHEME: string = "nighttheme" 
     }
 }

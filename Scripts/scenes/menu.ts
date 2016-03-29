@@ -4,7 +4,8 @@ module scenes {
         //PRIVATE INSTANCE VARIABLES ++++++++++++
         private _welcomeLabel: objects.Label;
         private _instructionLabel : objects.Label;
-        private _playButton: objects.Button;
+        private _playnightButton: objects.Button;
+        private _playdayButton: objects.Button;
         private _sky : objects.Sky;
         
         // CONSTRUCTOR ++++++++++++++++++++++
@@ -38,16 +39,27 @@ module scenes {
                 config.Screen.CENTER_X + 40, 
                 config.Screen.CENTER_Y-40,true);
             this.addChild(this._instructionLabel);
-
+            
             // add the PLAY button to the MENU scene
-            this._playButton = new objects.Button(
-                "PlayButton",
-                config.Screen.CENTER_X + 40,
+            this._playdayButton = new objects.Button(
+                "PlayDayButton",
+                config.Screen.CENTER_X -100,
                 config.Screen.CENTER_Y + 170, true);
-            this.addChild(this._playButton);
+            this.addChild(this._playdayButton);
             
             // Play Button event listener
-            this._playButton.on("click", this._startButtonClick, this);
+            this._playdayButton.on("click", this._playDayButtonClick, this);
+            
+            // add the PLAY button to the MENU scene
+            this._playnightButton = new objects.Button(
+                "PlayNightButton",
+                config.Screen.CENTER_X + 100,
+                config.Screen.CENTER_Y + 170, true);
+            this.addChild(this._playnightButton);
+            
+            // Play Button event listener
+            this._playnightButton.on("click", this._playNightButtonClick, this);
+            
             
             
             // add this scene to the global stage container
@@ -56,17 +68,27 @@ module scenes {
 
         // INTRO Scene updates here
         public update(): void {
-
+            this._sky.update();
         }
         
         
         //EVENT HANDLERS ++++++++++++++++++++
         
         // PLAY Button click event handler
-        private _startButtonClick(event: createjs.MouseEvent) {
+        private _playDayButtonClick(event: createjs.MouseEvent) {
             // Switch to the PLAY Scene
             scene = config.Scene.PLAY;
-            createjs.Sound.play("playsound",{"loop":-1});
+            theme = config.Sky.DAYTHEME;
+            createjs.Sound.play("playsound",{"loop":-1}); 
+            changeScene();
+        }
+        
+        // PLAY Button click event handler
+        private _playNightButtonClick(event: createjs.MouseEvent) {
+            // Switch to the PLAY Scene
+            scene = config.Scene.PLAY;
+            theme = config.Sky.NIGHTTHEME;
+            createjs.Sound.play("playsound",{"loop":-1}); 
             changeScene();
         }
 

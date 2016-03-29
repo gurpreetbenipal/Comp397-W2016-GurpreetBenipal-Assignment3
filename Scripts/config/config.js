@@ -29,5 +29,14 @@ var config;
         return Game;
     })();
     config.Game = Game;
+    //Sky Constants
+    var Sky = (function () {
+        function Sky() {
+        }
+        Sky.DAYTHEME = "daytheme";
+        Sky.NIGHTTHEME = "nighttheme";
+        return Sky;
+    })();
+    config.Sky = Sky;
 })(config || (config = {}));
 //# sourceMappingURL=config.js.map

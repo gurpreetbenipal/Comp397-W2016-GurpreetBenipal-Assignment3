@@ -8,6 +8,7 @@ var stats: Stats;
 
 var currentScene: objects.Scene;
 var scene: number;
+var theme: string = "nighttheme";
 
 // Game Scenes
 var menu: scenes.Menu;
@@ -16,9 +17,11 @@ var end: scenes.End;
 
 var assetData:objects.Asset[] = [
     // Add your Assets here
-    {id: "PlayButton", src:"../../Assets/images/PlayButton.png"},
+    {id: "PlayDayButton", src:"../../Assets/images/playdaybutton.png"},
+    {id: "PlayNightButton", src:"../../Assets/images/playnightbutton.png"},
     {id: "PlayAgainButton", src:"../../Assets/images/PlayAgainButton.png"},
-    {id: "sky", src:"../../Assets/images/sky.png"},
+    {id: "daytheme", src:"../../Assets/images/daytheme.png"},
+    {id: "nighttheme", src:"../../Assets/images/nighttheme.png"},
     {id: "bird", src:"../../Assets/images/bird.png"},
     {id: "dragon", src:"../../Assets/images/dragon.gif"},
     {id: "destroy", src:"../../Assets/images/fire.gif"},

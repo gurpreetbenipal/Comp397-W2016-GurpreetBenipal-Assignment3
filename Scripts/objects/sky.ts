@@ -6,7 +6,7 @@ module objects{
         
         //CONSTRUCTOR ++++++++++++++++++++++++++++++++++++++++
         constructor(){
-            super("sky");
+            super(theme);
             this._speed.x = 5;           // 5 pixels per frame
             this._reset(0);
         }

@@ -63,6 +63,7 @@ module scenes {
             this._collision = new managers.Collision(this._player);
             
             stage.addChild(this);
+            
         }
 
         // PLAY Scene updates here
