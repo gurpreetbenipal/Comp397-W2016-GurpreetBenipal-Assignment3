@@ -36,7 +36,4 @@ module objects {
             this._checkBounds(this._leftBounds);
         }
     }
-}kBounds(this._leftBounds );
-        }
-    }   
 }

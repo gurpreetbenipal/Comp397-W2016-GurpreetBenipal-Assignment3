@@ -40,5 +40,4 @@ var objects;
     })(objects.GameObject);
     objects.Dragon = Dragon;
 })(objects || (objects = {}));
-kBounds(this._leftBounds);
 //# sourceMappingURL=dragon.js.map

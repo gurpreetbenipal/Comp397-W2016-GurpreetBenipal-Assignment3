@@ -29,7 +29,7 @@ var assetData: objects.Asset[] = [
 
     { id: "gamestartsound", src: "../../Assets/audio/gamestart.wav" },
     { id: "nightplaysound", src: "../../Assets/audio/gamesound.wav" },
-    { id: "dayplaysound", src: "../../Assets/audio/playsound.mp3" },
+    { id: "dayplaysound", src: "../../Assets/audio/bgSound2.wav" },
     { id: "firehit", src: "../../Assets/audio/firehit.wav" },
     { id: "pickupitem", src: "../../Assets/audio/pickupitem.wav" },
     { id: "buttonpress", src: "../../Assets/audio/buttonpress.wav" },
